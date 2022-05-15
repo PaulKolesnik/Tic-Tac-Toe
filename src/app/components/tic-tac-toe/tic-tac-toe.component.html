@@ -1,0 +1,36 @@
+<div class="main-container">
+  <h1 class="title mat-display-2">Tic-Tac-Toe</h1>
+  <div class="field d-flex justify-content-center">
+    <p class="current-status mat-display-1">Start the game on the button</p>
+  </div>
+  <div *ngIf="!isGameStart()" class="field d-flex justify-content-center">
+    <button mat-raised-button color="danger" class="start-game-button" (click)="startGame()">Start Game</button>
+  </div>
+
+  <div *ngIf="isGameStart()" class="game-board">
+    <div class="player-one align-self-center mat-body-1">
+      Player 1
+      <div class="sign">Sign: X</div>
+    </div>
+    <div class="game-field container-fluid">
+      <div class="row">
+        <div (click)="clickSubField($event)" position="0" class="subfield col-4"></div>
+        <div (click)="clickSubField($event)" position="1" class="subfield col-4"></div>
+        <div (click)="clickSubField($event)" position="2" class="subfield col-4"></div>
+      </div>
+      <div class="row">
+        <div (click)="clickSubField($event)" position="3" class="subfield col-4"></div>
+        <div (click)="clickSubField($event)" position="4" class="subfield col-4"></div>
+        <div (click)="clickSubField($event)" position="5" class="subfield col-4"></div>
+      </div>
+      <div class="row">
+        <div (click)="clickSubField($event)" position="6" class="subfield col-4"></div>
+        <div (click)="clickSubField($event)" position="7" class="subfield col-4"></div>
+        <div (click)="clickSubField($event)" position="8" class="subfield col-4"></div>
+      </div>
+    </div>
+    <div class="player-two align-self-center mat-body-1">Player 2
+      <div class="sign">Sign: O</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+.title {
+  margin: 15px 0;
+  text-align: center;
+  font-weight: 900;
+  color: #fff;
+}
+
+.field {
+  width: 100%;
+}
+
+p {
+  color: #fff;
+}
+
+.main-container {
+  .game-board {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .sign {
+      font-weight: 700;
+      font-size: x-large;
+    }
+
+    .player-one {
+      color: greenyellow;
+    }
+
+    .player-two {
+      color: red;
+    }
+
+    .game-field {
+      max-width: 300px;
+      padding: 50px 0px;
+
+      .subfield {
+        cursor: pointer;
+        height: 100px;
+        width: 100px;
+        border: 1px solid #fff;
+
+        &.player-one {
+          background-color: lightgreen;
+          background-image: url('../../../assets/images/x.png');
+          background-size: cover;
+        }
+
+        &.player-two {
+          background: lightcoral;
+          background-image: url('../../../assets/images/circle.png');
+          background-size: cover;
+        }
+      }
+    }
+  }
+}
