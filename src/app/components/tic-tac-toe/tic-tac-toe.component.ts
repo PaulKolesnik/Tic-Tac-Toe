@@ -19,7 +19,7 @@ export class TicTacToeComponent implements OnInit {
 
   startGame(): void {
     this.game.gameStart();
-    const currentPlayer = "Current turn: Player: " + this.game.currentTurn;
+    const currentPlayer = "Current turn: Player " + this.game.currentTurn;
     const info = document.querySelector('.current-status');
     if (info) {
       info.innerHTML = currentPlayer;
@@ -38,7 +38,7 @@ export class TicTacToeComponent implements OnInit {
       await this.game.checkGameEndFull().then((end: boolean) => {
         if (this.game.gameStatus === GameStatus.Stop && end) {
           if (info) {
-            info.innerHTML = "No winner, draw";
+            info.innerHTML = "draw, Play Again !";
           }
         }
       });
@@ -54,7 +54,7 @@ export class TicTacToeComponent implements OnInit {
 
       this.game.changePlayer();
       if (this.isGameStart()) {
-        const currentPlayer = "Current turn: Player: " + this.game.currentTurn;
+        const currentPlayer = "Current turn: Player " + this.game.currentTurn;
         if (info)
           info.innerHTML = currentPlayer;
       }

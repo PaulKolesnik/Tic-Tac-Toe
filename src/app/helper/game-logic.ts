@@ -105,9 +105,16 @@ export class GameLogic {
       }
 
 
-      arrayEquals(a: Array<any>, b: Array<any>): boolean {
-            return Array.isArray(a) && Array.isArray(b) && a.length === b.length && a.every((value, index) => {
-                return  value == b[index]
-            });
+      arrayEquals(winnigArray: Array<any>, currentBoard: Array<any>): boolean {
+            var count = 0;
+            if (Array.isArray(winnigArray) && Array.isArray(currentBoard) && winnigArray.length === currentBoard.length) {
+                  for (let index = 0; index < winnigArray.length; index++) {
+                        if (winnigArray[index] === currentBoard[index] && winnigArray[index] != 0) {
+                              count++;
+                        }
+                  }
+                  return (count >= 3);
+            }
+            return false;
       }
 }
